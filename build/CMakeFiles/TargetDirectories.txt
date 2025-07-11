@@ -1,0 +1,3 @@
+/home/ubuntu/gitHub/linux-sysmon/build/CMakeFiles/linux-sysmon.dir
+/home/ubuntu/gitHub/linux-sysmon/build/CMakeFiles/edit_cache.dir
+/home/ubuntu/gitHub/linux-sysmon/build/CMakeFiles/rebuild_cache.dir
