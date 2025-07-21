@@ -25,6 +25,4 @@ mkdir build && cd build
 cmake ..
 make
 ./linux-sysmon
-
-
-####
+```
