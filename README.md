@@ -1,4 +1,4 @@
-# cpp-sys-monitor
+# linux-sysmon
 
 🚀 A lightweight Linux system monitoring CLI tool built with C++.
 
@@ -19,12 +19,12 @@ This tool monitors basic system resource usage such as:
 ## 🛠️ Build & Run
 
 ```bash
-git clone https://github.com/<your-username>/cpp-sys-monitor.git
-cd cpp-sys-monitor
+git clone https://github.com/<your-username>/linux-sysmon.git
+cd linux-sysmon
 mkdir build && cd build
 cmake ..
 make
-./cpp-sys-monitor
+./linux-sysmon
 
 
 ####
