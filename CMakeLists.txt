@@ -8,9 +8,11 @@ target_include_directories(meminfo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_library(cpuinfo src/cpuinfo.cpp)
 target_include_directories(cpuinfo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+add_library(diskusage src/diskusage.cpp)
+ target_include_directories(diskusage PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
 add_executable(linux-sysmon src/main.cpp)
-target_link_libraries(linux-sysmon PRIVATE meminfo cpuinfo)
+target_link_libraries(linux-sysmon PRIVATE meminfo cpuinfo diskusage)
 
 # Testing
 enable_testing()
@@ -25,9 +27,12 @@ FetchContent_MakeAvailable(googletest)
 add_executable(meminfo_test tests/test_meminfo.cpp)
 target_link_libraries(meminfo_test PRIVATE meminfo gtest_main)
 
+add_executable(diskusage_test tests/test_diskusage.cpp)
+ target_link_libraries(diskusage_test PRIVATE diskusage gtest_main)
 add_executable(cpuinfo_test tests/test_cpuinfo.cpp)
 target_link_libraries(cpuinfo_test PRIVATE cpuinfo gtest_main)
 
 include(GoogleTest)
 gtest_discover_tests(meminfo_test)
+ gtest_discover_tests(diskusage_test)
 gtest_discover_tests(cpuinfo_test)
