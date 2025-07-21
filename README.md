@@ -12,7 +12,7 @@ This tool monitors basic system resource usage such as:
 
 ## 🔧 Features
 
-- Display real-time CPU and memory usage
+- Display real-time CPU, memory, and disk usage
 - Read directly from `/proc` file system
 - Color-coded CLI output
 - Easy to extend with more metrics
