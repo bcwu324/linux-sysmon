@@ -6,8 +6,11 @@ set(CMAKE_CXX_STANDARD 17)
 add_library(meminfo src/meminfo.cpp)
 target_include_directories(meminfo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
+add_library(cpuinfo src/cpuinfo.cpp)
+target_include_directories(cpuinfo PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
+
 add_executable(linux-sysmon src/main.cpp)
-target_link_libraries(linux-sysmon PRIVATE meminfo)
+target_link_libraries(linux-sysmon PRIVATE meminfo cpuinfo)
 
 # Testing
 enable_testing()
@@ -22,5 +25,9 @@ FetchContent_MakeAvailable(googletest)
 add_executable(meminfo_test tests/test_meminfo.cpp)
 target_link_libraries(meminfo_test PRIVATE meminfo gtest_main)
 
+add_executable(cpuinfo_test tests/test_cpuinfo.cpp)
+target_link_libraries(cpuinfo_test PRIVATE cpuinfo gtest_main)
+
 include(GoogleTest)
 gtest_discover_tests(meminfo_test)
+gtest_discover_tests(cpuinfo_test)
